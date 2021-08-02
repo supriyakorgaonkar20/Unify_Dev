@@ -24,6 +24,7 @@
     <script type='text/javascript'>
 	
 	
+            
             var initESW = function(gslbBaseURL) {
             embedded_svc.settings.displayHelpButton = true; //Or false
             embedded_svc.settings.language = ''; //For example, enter 'en' or 'en-US'
@@ -75,7 +76,7 @@
             "saveToTranscript": "ContactId"
             }
             ];
-            embedded_svc.settings.defaultMinimizedText = 'web chat'; //(Defaults to Chat with an Expert)
+            embedded_svc.settings.defaultMinimizedText = 'Chat'; //(Defaults to Chat with an Expert)
             //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
             //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -114,7 +115,7 @@
 	
 	   	    
             
-        //Added to make the chat button disappear
+        //[Anamika-]-Added to make the chat button disappear
         function checkAvailability() {
             const elementEnabled = document.getElementsByClassName('uiButton helpButtonEnabled');
             const elementDisabled = document.getElementsByClassName('uiButton helpButtonDisabled');
@@ -125,36 +126,34 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
-       
+       let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
 			  "fieldpopulation": {
-			     "campaign": '(cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : ',
-           "source": '(cbTrackerValues['utm_source'] !== undefined) ? cbTrackerValues['utm_source']  : ',
-           "medium": '(cbTrackerValues['utm_medium'] !== undefined) ? cbTrackerValues['utm_medium']  : ',
-           "content": '(cbTrackerValues['utm_content'] !== undefined) ? cbTrackerValues['utm_content']  : ',
-           "utm_term": '(cbTrackerValues['utm_term'] !== undefined) ? cbTrackerValues['utm_term']  : '',
-           "gclientid": '(cbTrackerValues['Google_ID__c'] !== undefined) ? cbTrackerValues['Google_ID__c']  : ',
-           "landingPage": '(cbTrackerValues['Landing_Page'] !== undefined) ? cbTrackerValues['Landing_Page']  : ',
-           "referrer": '(cbTrackerValues['Referrer'] !== undefined) ? cbTrackerValues['Referrer']  : '
-			  }/**,
+			    "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
+			    "source": (cbTrackerValues['utm_source'] !== undefined) ? cbTrackerValues['utm_source']  : '',
+			    "medium": (cbTrackerValues['utm_medium'] !== undefined) ? cbTrackerValues['utm_medium']  : '',
+			    "content": (cbTrackerValues['utm_content'] !== undefined) ? cbTrackerValues['utm_content']  : '',
+			    "utm_term": (cbTrackerValues['utm_term'] !== undefined) ? cbTrackerValues['utm_term']  : '',
+			    "gclientid": (cbTrackerValues['Google_ID__c'] !== undefined) ? cbTrackerValues['Google_ID__c']  : '',
+			    "landingPage": "landingPage",
+			    "referrer": "referrer"
+			  },
 			  "labelChangeArray": [
 			    {
-			      "newlabel": "F N",
-			      "oldlabel": "First Name"
-			    },
-				  {
-			      "newlabel": "contact",
-			      "oldlabel": "Phone"
-			    }
-			    {
-			      "newlabel": "L N",
+			      "newlabel": "Last Name",
 			      "oldlabel": "Last Name"
-			    }
-			  ]**/
+			    },
+                {
+                  "newlabel": "Questions/Comments",
+                  "oldlabel": "Details Field"
+                }
+			  ]
 			}
-	    window.name = JSON.stringify(parseValue);  
+	    window.name = JSON.stringify(parseValue);
+    
         window.setInterval(function () {
-            checkAvailability();		
+            checkAvailability();
+		
         }, 500);
         //End
         //Eventhandler to get lead id from Aura
@@ -167,6 +166,7 @@
         },
         false
     );
+	    
 	    
         //End of Event Handler
     </script>
