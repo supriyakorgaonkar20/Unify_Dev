@@ -32,7 +32,7 @@
                 "displayToAgent": true
             },
             {
-                "label":"Topic",
+                "label":"Web Topic",
                 "transcriptFields":[ "Chat_Subject__c" ],
                 "displayToAgent": true
             }];
