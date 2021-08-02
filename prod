@@ -12,6 +12,12 @@
       .embeddedServiceHelpButton .helpButton .uiButton:focus {
         outline: 1px solid #005290;
       }
+      	.embeddedServiceHelpButton .helpButton {
+            position: fixed;
+            bottom: 35%;
+            transform: rotate(270deg);
+            width: 2%;
+          }
     </style>
 
 <script type='text/javascript' src='https://service.force.com/embeddedservice/5.0/esw.min.js'></script>
@@ -25,7 +31,7 @@
         /**
         embedded_svc.settings.defaultMinimizedText - use this to populate the text on the chat button please 
         **/
-        //embedded_svc.settings.defaultMinimizedText = '...'; //(Defaults to Chat with an Expert)
+        embedded_svc.settings.defaultMinimizedText = 'Chat'; //(Defaults to Chat with an Expert)
         //embedded_svc.settings.disabledMinimizedText = '...'; //(Defaults to Agent Offline)
 
         //embedded_svc.settings.loadingText = ''; //(Defaults to Loading)
@@ -136,7 +142,7 @@
                              and initiate the chat.
         ---------------------------**/
         document.addEventListener("setCustomField",function(event) {
-            embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL";         
+            embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //;         
             event.detail.callback();
         },
         false
@@ -147,7 +153,7 @@
                                  web chat to Unify.Also change the label of the  fields .
         Instructions -- Please comment or remove the labelChangeArray attribute from the parse value when no value has to be changed and vice versa.                         
         --------------------------------***/
-        var valueTo ={
+        var parseValue ={
 			  "fieldpopulation": {
 			                  "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
                               "source": (cbTrackerValues['utm_source'] !== undefined) ? cbTrackerValues['utm_source']  : '',
