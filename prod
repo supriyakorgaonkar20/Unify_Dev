@@ -86,7 +86,7 @@
         }
             ];
 
-        embedded_svc.settings.enabledFeatgures = ['LiveAgent'];
+        embedded_svc.settings.enabledFeatures = ['LiveAgent'];
         embedded_svc.settings.entryFeature = 'LiveAgent';
 
         embedded_svc.init(
