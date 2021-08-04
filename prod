@@ -153,6 +153,7 @@
                                  web chat to Unify.Also change the label of the  fields .
         Instructions -- Please comment or remove the labelChangeArray attribute from the parse value when no value has to be changed and vice versa.                         
         --------------------------------***/
+	let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
         var parseValue ={
 			  "fieldpopulation": {
 			                  "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
