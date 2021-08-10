@@ -129,7 +129,7 @@
 	    let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
 			  "fieldpopulation": {
-			                        "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
+			      "campaign": (cbTrackerValues['utm_campaign'] !== undefined) ? cbTrackerValues['utm_campaign']  : '',
                               "source": (cbTrackerValues['utm_source'] !== undefined) ? cbTrackerValues['utm_source']  : '',
                               "medium": (cbTrackerValues['utm_medium'] !== undefined) ? cbTrackerValues['utm_medium']  : '',
                               "content": (cbTrackerValues['utm_content'] !== undefined) ? cbTrackerValues['utm_content']  : '',
@@ -137,22 +137,12 @@
                               "gclientid": (cbTrackerValues['Google_ID__c'] !== undefined) ? cbTrackerValues['Google_ID__c']  : '',
                               "landingPage": (cbTrackerValues['Landing_Page'] !== undefined) ? cbTrackerValues['Landing_Page']  : '',
                               "referrer": (cbTrackerValues['Referrer'] !== undefined) ? cbTrackerValues['Referrer']  : ''
-			                      }/**,
-        "labelChangeArray": [
-                              {
-                                "newlabel": "F N",
-                                "oldlabel": "First Name"
-                              },
-                              {
-                                "newlabel": "contact",
-                                "oldlabel": "Phone"
-                              }
-                              {
-                                "newlabel": "L N",
-                                "oldlabel": "Last Name"
-                              }
-			                    ]**/
-			              }
+			                      },
+         		 "labelChangeArray": [{
+						"newlabel": "Questions/Comments",
+                  				"oldlabel": "Details Field"
+					     }]
+			   }
 	    window.name = JSON.stringify(parseValue);
       window.setInterval(function () {
             checkAvailability();		
