@@ -128,7 +128,9 @@
         }
 	
     var str;
+    
     document.querySelectorAll('select').forEach((select) => {
+    console.log("outside querySelector TOPIC");
     if(select.name == "Chat_Subject_Web__c"){
     console.log("inside querySelector TOPIC");
     	str=select;
