@@ -127,16 +127,6 @@
             }     
         }
 	
-    var str;
-    
-    document.querySelectorAll('select').forEach((select) => {
-    console.log("outside querySelector TOPIC");
-    if(select.name == "Chat_Subject_Web__c"){
-    console.log("inside querySelector TOPIC");
-    	str=select;
-    }})
-    str.addEventListener("change",ga('send', 'event', 'chat', 'start', this.innerHTML),false);
-    
 	    let chatBoxTrackingParams = {};
 	    let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
