@@ -126,6 +126,7 @@
                 document.getElementsByClassName('embeddedServiceHelpButton').item(0).style.display = "none";
             }     
         }
+	    let chatBoxTrackingParams = {};
 	    let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
 			  "fieldpopulation": {
