@@ -163,25 +163,27 @@
     
     document.addEventListener("setTopicField",
 	function(event) {
-	    var str;
+	    /*var str;
 	    document.querySelectorAll('select').forEach((select) => {
 	    console.log("outside querySelector TOPIC");
 	    if(select.name == "Chat_Subject_Web__c"){
 	    console.log("inside querySelector TOPIC");
 		str=select;
 	    }})
-	    str.addEventListener("change",ga('send', 'event', 'chat', 'start', this.innerHTML),false);
+	    str.addEventListener("change",ga('send', 'event', 'chat', 'start', this.innerHTML),false);*/
+	    console.log("inside eventlistener");
+	    ga();
 	},
         false
     )
     
-    function ga(test1, test2, test3, test4, test5){
+    function ga(){
     console.log('Kushal func ga');
-    	console.log('test1-'+test1);
+    	/*console.log('test1-'+test1);
 	console.log('test2-'+test2);
 	console.log('test3-'+test3);
 	console.log('test4-'+test4);
-	console.log('test5-'+test5);
+	console.log('test5-'+test5);*/
     }
 	    
         //End of Event Handler
