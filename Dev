@@ -127,6 +127,12 @@
             }     
         }
 	
+	document.querySelectorAll('button').forEach((btn)=>{
+    console.log(btn.class);
+    console.log(btn.className);
+    
+    })
+	
 	    let chatBoxTrackingParams = {};
 	    let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
@@ -161,11 +167,7 @@
         false
     )
     
-  document.querySelectorAll('button').forEach((btn)=>{
-    console.log(btn.class);
-    console.log(btn.className);
-    
-    })
+  
     document.addEventListener("setTopicField",
 	function(event) {
 	    /*var str;
