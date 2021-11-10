@@ -160,8 +160,7 @@
         //Eventhandler to get lead id from Aura
         document.addEventListener("setCustomField",
         function(event) {
-             console.log('embedded_svc.settings.extraPrechatInfo-> ',embedded_svc.settings.extraPrechatInfo);	
-	     console.log('event all fields',event.detail.Id);
+             console.log('event all fields',event.detail.Id);
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL"; 
             event.detail.callback();
         },
