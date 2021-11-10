@@ -29,13 +29,20 @@
             embedded_svc.settings.extraPrechatFormDetails = [
             {
                 "label":"LeadOrContactId",
+		"transcriptFields":[ "Test_Email__c" ],
                 "displayToAgent": true
             },
             {
                 "label":"Web Topic",
                 "transcriptFields":[ "Chat_Subject__c" ],
                 "displayToAgent": true
-            }];
+            },
+	    {
+                "label":"Email",
+                "transcriptFields":[ "Prechat_Email__c" ],
+                "displayToAgent": true
+            }
+	    ];
             console.log('setting-',embedded_svc.settings.extraPrechatFormDetails);
             
             //Calling Prechat API
@@ -127,12 +134,6 @@
             }     
         }
 	
-	document.querySelectorAll('button').forEach((btn)=>{
-    console.log(btn.class);
-    console.log(btn.className);
-    
-    })
-	
 	    let chatBoxTrackingParams = {};
 	    let cbTrackerValues = chatBoxTrackingParams.getCookieValues();
 	    var parseValue ={
@@ -161,37 +162,11 @@
         function(event) {
              console.log('event ',event.detail.Id);	
             embedded_svc.settings.extraPrechatFormDetails[0].value = event.detail.Id; //"0032h00000VJ4XfAAL"; 
-	    ga('send', 'event', 'chat', 'start', this.value);
             event.detail.callback();
         },
         false
     )
     
-  
-    document.addEventListener("setTopicField",
-	function(event) {
-	    /*var str;
-	    document.querySelectorAll('select').forEach((select) => {
-	    console.log("outside querySelector TOPIC");
-	    if(select.name == "Chat_Subject_Web__c"){
-	    console.log("inside querySelector TOPIC");
-		str=select;
-	    }})
-	    str.addEventListener("change",ga('send', 'event', 'chat', 'start', this.innerHTML),false);*/
-	    console.log("inside eventlistener");
-	    ga();
-	},
-        false
-    )
-    
-    function ga(){
-    console.log('Kushal func ga');
-    	/*console.log('test1-'+test1);
-	console.log('test2-'+test2);
-	console.log('test3-'+test3);
-	console.log('test4-'+test4);
-	console.log('test5-'+test5);*/
-    }
 	    
         //End of Event Handler
     </script>
